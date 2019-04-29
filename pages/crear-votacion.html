@@ -168,7 +168,111 @@
   
 </div> -->
       <div class="content">
-        
+        <div class="row">
+          <div class="col-md-12">
+          <div class="card ">
+              <div class="card-header ">
+                <div class="col-sm-10">
+                  <h4 class="card-title">Crear votación</h4>
+                </div>
+              </div>
+              <div class="card-body ">
+                <form method="get" action="/" class="form-horizontal">
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Nombre</label>
+                    <div class="col-sm-10">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Ana Rodriguez">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Preguntas</label>
+                    <div class="col-sm-10">
+                      <div class="form-group">
+                      <button class="btn btn-primary">Añadir</button>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">E-mails</label>
+                    <div class="col-sm-10">
+                      <div class="form-group">
+                      <textarea placeholder="ejemplo@mail.com" class="form-control"></textarea>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Administradores</label>
+                    <div class="col-sm-10">
+                      <div class="form-group">
+                        <textarea placeholder="ejemplo@mail.com" class="form-control"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Fecha limite</label>
+                    <div class="col-sm-10">
+                      <div class="form-group">
+                        <input type="text" class="form-control datatimepicker" value="10/05/2018">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Texto para email con link</label>
+                    <div class="col-sm-10">
+                      <div class="form-group">
+                      <textarea placeholder="{{=title}}
+
+Enlace para votar: {{=link}}
+Enlace para votos emitidos: {{=link_ballots}}
+Enlace to resultados: {{=link_results}}" class="form-control"></textarea>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Texto para email confirmacion</label>
+                    <div class="col-sm-10">
+                      <div class="form-group">
+                      <textarea placeholder="{{=title}}
+
+Tu voto ha sido registrado. Gracias!
+Aquí está tu boleta.
+
+Tu boleta: {{=link}}
+Una copia está anexa.
+
+Puedes guardarla para verificar la integridad de la consulta.
+" class="form-control"></textarea>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Texto para no votantes</label>
+                    <div class="col-sm-10">
+                      <div class="form-group">
+                      <textarea placeholder="{{=title}}
+
+Your ballot: {{=link}}
+
+{{=signature}}
+(you did not vote, your BLANK ballot is also attached)" class="form-control"></textarea>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-2 ">
+                    </div>
+                    <div class="col-sm-10">
+                    <button class="btn btn-success">Terminar</button>
+                  </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            </div>
+        </div>
+
       </div>
       <footer class="footer footer-black  footer-white ">
         <div class="container-fluid">
@@ -239,14 +343,18 @@
   <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
   <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
-  <script>
+  <script src="../assets/js/plugins/bootstrap-selectpicker.js"></script>
+  <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+  <script src="../assets/js/plugins/bootstrap-datetimepicker.js"></script>
+  <!--  DataTables.net Plugin, full documentation here: https://datatables.net/    -->
+
+   <script>
     $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
-
-
-      demo.initVectorMap();
-
+      // initialise Datetimepicker and Sliders
+      demo.initDateTimePicker();
+      if ($('.slider').length != 0) {
+        demo.initSliders();
+      }
     });
   </script>
 </body>

@@ -6129,8 +6129,8 @@ fieldset[disabled]
 
 textarea.form-control {
   max-width: 100%;
-  max-height: 80px;
-  padding: 10px 10px 0 0;
+  max-height: 190px;
+  padding: 5px 10px 0px 10px;
   resize: none;
   border: none;
   border: 1px solid #E3E3E3;
